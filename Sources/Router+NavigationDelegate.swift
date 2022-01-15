@@ -11,4 +11,22 @@ Status: #Complete | #Not decorated
 
 import SwiftUI
 
-extension Router {}
+extension Router {
+    internal final class NavigationDelegate: NSObject, UINavigationControllerDelegate {
+        @MainActor func navigationController(
+            _ navigationController: UINavigationController,
+            willShow viewController: UIViewController,
+            animated: Bool
+        ){
+            navigationController.setNavigationBarHidden(true, animated: true)
+        }
+        
+        @MainActor func navigationController(
+            _ navigationController: UINavigationController,
+            didShow viewController: UIViewController,
+            animated: Bool
+        ){
+            navigationController.setNavigationBarHidden(true, animated: false)
+        }
+    }
+}
