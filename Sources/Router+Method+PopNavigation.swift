@@ -11,4 +11,10 @@ Status: #Complete | #Not decorated
 
 import SwiftUI
 
-extension Router {}
+extension Router {
+    @MainActor internal func popNavigation(controller: UINavigationController){
+        controller.popViewController(animated: true)
+        controller.setNavigationBarHidden(true, animated: false)
+    }
+    
+}
