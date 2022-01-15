@@ -11,4 +11,12 @@ Status: #Complete | #Not decorated
 
 import SwiftUI
 
-public struct RouterViewWrapper {}
+public struct RouterViewWrapper {
+    public init(view: @escaping () -> AnyView){
+        self.view = view
+    }
+    public init(){
+        self.view = nil
+    }
+    public let view: (() -> AnyView)?
+}
