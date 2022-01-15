@@ -11,4 +11,8 @@ Status: #Complete | #Not decorated
 
 import SwiftUI
 
-extension RouterLink where Label == Text {}
+extension RouterLink where Label == Text {
+    public init(_ label: String, _ destination: @escaping () -> Content) {
+        self.init({ Text(label) }, destination)
+    }
+}
