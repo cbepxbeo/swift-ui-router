@@ -11,4 +11,9 @@ Status: #Complete | #Not decorated
 
 import SwiftUI
 
-public protocol RouterController: ObservableObject {}
+public protocol RouterController: ObservableObject {
+    init(rootView: (() -> AnyView)?)
+    var current: RouterViewWrapper? { get set }
+    func pop()
+    func push<T: View>(@ViewBuilder _ content: @escaping () -> T)
+}
