@@ -12,4 +12,9 @@ Status: #Complete | #Not decorated
 import SwiftUI
 
 
-extension Router {}
+extension Router {
+    @MainActor internal func pushToNavigation(controller: UINavigationController, toPush: UIViewController){
+        controller.pushViewController(toPush, animated: true)
+        controller.setNavigationBarHidden(true, animated: false)
+    }
+}
