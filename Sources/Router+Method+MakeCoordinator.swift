@@ -9,4 +9,8 @@ Status: #Complete | #Not decorated
 
 */
 
-extension Router {}
+extension Router {
+    public func makeCoordinator() -> Controller {
+        self.routingController
+    }
+}
