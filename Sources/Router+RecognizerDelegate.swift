@@ -11,4 +11,18 @@ Status: #Complete | #Not decorated
 
 import SwiftUI
 
-extension Router {}
+extension Router {
+    internal final class RecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
+        private weak var navigationController: UINavigationController?
+        
+        internal func setNavigationController(_ controller: UINavigationController){
+            self.navigationController = controller
+        }
+        internal func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+            navigationController?.viewControllers.count ?? 0 > 1
+        }
+        internal func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+            true
+        }
+    }
+}
