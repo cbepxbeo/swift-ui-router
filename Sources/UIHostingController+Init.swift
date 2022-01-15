@@ -11,4 +11,12 @@ Status: #Complete | #Not decorated
 
 import SwiftUI
 
-extension UIHostingController where Content == AnyView {}
+extension UIHostingController where Content == AnyView {
+    internal convenience init<T: View, Controller: RouterController>(view content: () -> T, controller: Controller){
+        self.init(rootView: AnyView(
+            content()
+                .environmentObject(controller)
+                .ignoresSafeArea()
+        ))
+    }
+}
