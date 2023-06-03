@@ -23,7 +23,7 @@ extension RoutingController {
         type: CATransitionType = .push,
         duration: CGFloat = 0.3,
         @ViewBuilder _ content: @escaping () -> Destination){
-            self.push(nil, nil, nil, content)
+            self.push(subType, type, duration, content)
         }
     
     @MainActor internal func push<Destination: View>(
