@@ -4,6 +4,7 @@ Project: SwiftUIRouter
 File: RouterLink.swift
 Created by: Egor Boyko
 Date: 15.01.2022
+Last Fix: 03.06.2023
 
 Status: #Complete | #Not decorated
 
@@ -13,7 +14,7 @@ import SwiftUI
 
 public struct RouterLink<Content: View, Label: View>: View {
     
-    @EnvironmentObject var routingController: RoutingController
+    @EnvironmentObject internal var routingController: RoutingController
     
     public init(
         _ label: @escaping () -> Label,
@@ -22,19 +23,8 @@ public struct RouterLink<Content: View, Label: View>: View {
             self.destination = destination
         }
     
-    private let label: () -> Label
-    private let destination: () -> Content
+    internal let label: () -> Label
+    internal let destination: () -> Content
 
-    public var body: some View {
-        Button(
-            action: action,
-            label: label
-        )
-    }
-    
-    func action(){
-        self.routingController.push(self.destination)
-    }
-    
 }
 
