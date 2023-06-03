@@ -1,0 +1,40 @@
+/*
+
+Project: SwiftUIRouter
+File: RoutingController+Methods+Pop.swift
+Created by: Egor Boyko
+Date: 02.06.2023
+
+Status: #Complete | #Not decorated
+
+*/
+
+import SwiftUI
+
+extension RoutingController {
+    
+    @MainActor public func pop(
+        transition subType: CATransitionSubtype,
+        type: CATransitionType = .push,
+        duration: CGFloat = 0.3){
+            self.pop(subType, type, duration)
+        }
+    
+    @MainActor public func pop(){
+        self.pop(nil, nil, nil)
+    }
+    
+    @MainActor internal func pop(
+        _ subType: CATransitionSubtype?,
+        _ type: CATransitionType?,
+        _ duration: CGFloat?){
+            self.navigationController?.popViewController(
+                animated: self.addTransitionToLayer(
+                    subType,
+                    type,
+                    duration)
+            )
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
+    
+}
