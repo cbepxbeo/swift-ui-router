@@ -4,7 +4,8 @@ Project: SwiftUIRouter
 File: RoutingController+Methods+Push.swift
 Created by: Egor Boyko
 Date: 02.06.2023
-
+Last Fix: 03.06.2023
+ 
 Status: #Complete | #Not decorated
 
 */
@@ -13,20 +14,23 @@ import SwiftUI
 
 extension RoutingController {
     
-    @MainActor public func push<Destination: View>(
+    @MainActor public func push<Destination: View, Tag: Hashable>(
+        tag: Tag? = Optional<Int>.none,
         @ViewBuilder _ content: @escaping () -> Destination){
-            self.push(nil, nil, nil, content)
+            self.push(tag, nil, nil, nil, content)
         }
     
-    @MainActor public func push<Destination: View>(
+    @MainActor public func push<Destination: View, Tag: Hashable>(
+        tag: Tag? = Optional<Int>.none,
         transition subType: CATransitionSubtype,
         type: CATransitionType = .push,
         duration: CGFloat = 0.3,
         @ViewBuilder _ content: @escaping () -> Destination){
-            self.push(subType, type, duration, content)
+            self.push(tag, subType, type, duration, content)
         }
     
-    @MainActor internal func push<Destination: View>(
+    @MainActor internal func push<Destination: View, Tag: Hashable>(
+        _ tag: Tag?,
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?,
@@ -38,7 +42,13 @@ extension RoutingController {
                     .ignoresSafeArea()
             )
             
-            self.navigationController?.pushViewController(hosting, animated: self.addTransitionToLayer(
+            if let tag {
+                self.storage[tag.hashValue] = .init(value: hosting)
+            }
+            
+            self.navigationController?.pushViewController(
+                hosting,
+                animated: self.addTransitionToLayer(
                     subType,
                     type,
                     duration
