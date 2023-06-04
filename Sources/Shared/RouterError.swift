@@ -10,6 +10,7 @@ Status: #Complete | #Not decorated
 */
 
 
-public enum RouterError: Error {
-    case unknownTag
+public enum RouterError<Tag: Hashable>: Error {
+    case unknownTag(tag: Tag)
+    case alreadyExistsTag(tag: Tag)
 }
