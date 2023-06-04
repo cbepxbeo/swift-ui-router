@@ -13,6 +13,6 @@ import SwiftUI
 
 extension RouterLink {
     internal func action(){
-        self.routingController.push(self.destination)
+        self.routingController.push(replacingTag: self.tag, self.destination)
     }
 }
