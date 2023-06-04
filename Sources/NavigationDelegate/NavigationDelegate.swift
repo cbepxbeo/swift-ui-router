@@ -11,4 +11,6 @@ Status: #Complete | #Not decorated
 
 import ObjectiveC
 
-internal final class NavigationDelegate: NSObject {}
+internal final class NavigationDelegate: NSObject {
+    internal weak var routingController: RoutingController?
+}
