@@ -14,12 +14,12 @@ Status: #Complete | #Decorated
 import SwiftUI
 
 extension RouterLink where Destination == Never, Tag == Int, Label == Text {
-    ///Creating a router link using the options (back or root view).  Text label.
+    ///Creating a router link using the options (back or root view) and text label.
     ///
     ///     RouterLink("Back", option: .back)
     ///
-    ///- Parameter label: Text to label
-    ///- Parameter option: Link option
+    ///- Parameter label: RouterLink text label.
+    ///- Parameter option: RouterLink option.
     public init(_ label: String, option: RouterLinkOption) {
         self.init(
             tag: nil,

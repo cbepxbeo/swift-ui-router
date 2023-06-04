@@ -4,8 +4,10 @@ Project: SwiftUIRouter
 File: RouterLink+Body.swift
 Created by: Egor Boyko
 Date: 03.06.2023
-
-Status: #Complete | #Not decorated
+Last Fix: 04.06.2023
+Version: 1.0.3
+ 
+Status: #Complete | #Does not require decorated
 
 */
 

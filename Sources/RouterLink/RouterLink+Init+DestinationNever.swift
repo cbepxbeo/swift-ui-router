@@ -14,7 +14,7 @@ Status: #Complete | #Decorated
 import SwiftUI
 
 extension RouterLink where Destination == Never {
-    ///Creating a router link allows you to jump to the view by tag.
+    ///Creating a router link allows you to jump to the view by tag and your label.
     ///
     ///     func makeLabel() -> some View {
     ///         Text("Label")
@@ -29,8 +29,8 @@ extension RouterLink where Destination == Never {
     ///         }
     ///     }
     ///
-    ///- Parameter to: Tag assigned to the view to which you need to go
-    ///- Parameter label: Link label
+    ///- Parameter to: Tag assigned to the view to which you need to go.
+    ///- Parameter label: RouterLink label.
     ///- Parameter handler: Handling the situation with a non-existent tag.
     ///- Warning: Handle the situation with a non-existent tag.
     public init(

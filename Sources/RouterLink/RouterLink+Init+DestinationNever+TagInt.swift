@@ -20,8 +20,8 @@ extension RouterLink where Destination == Never, Tag == Int {
     ///         Image(systemName: "chevron.left")
     ///     }
     ///
-    ///- Parameter option: Link option
-    ///- Parameter label: Link label
+    ///- Parameter option: RouterLink option.
+    ///- Parameter label: RouterLink label.
     public init(
         option: RouterLinkOption,
         @ViewBuilder label: @escaping () -> Label){
