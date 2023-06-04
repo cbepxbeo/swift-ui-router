@@ -30,6 +30,7 @@ extension Router {
             rootViewController: hosted
         )
         
+        context.coordinator.navigationDelegate.routingController = context.coordinator
         context.coordinator.navigationController = navigationController
         context.coordinator.recognizerDelegate.setNavigationController(navigationController)
         
