@@ -28,13 +28,14 @@ extension RoutingController {
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?){
-        self.navigationController?.popToRootViewController(
-            animated: self.addTransitionToLayer(
-                subType,
-                type,
-                duration)
-        )
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+            self.navigationController?.popToRootViewController(
+                animated: self.addTransitionToLayer(
+                    subType,
+                    type,
+                    duration)
+            )
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+            self.storage = [:]
     }
     
 }

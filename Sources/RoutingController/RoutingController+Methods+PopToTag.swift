@@ -41,7 +41,7 @@ extension RoutingController {
                 )
                 self.navigationController?.setNavigationBarHidden(true, animated: false)
             } else {
-                throw RouterError.unownedTag
+                throw RouterError.unknownTag(tag: tag)
             }
         }
 }

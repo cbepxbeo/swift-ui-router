@@ -28,6 +28,7 @@ extension RoutingController {
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?){
+
             self.navigationController?.popViewController(
                 animated: self.addTransitionToLayer(
                     subType,

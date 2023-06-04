@@ -15,17 +15,38 @@ import SwiftUI
 extension RoutingController {
     
     @MainActor public func push<Destination: View, Tag: Hashable>(
-        tag: Tag? = Optional<Int>.none,
+        replacingTag tag: Tag? = Optional<Int>.none,
         @ViewBuilder _ content: @escaping () -> Destination){
             self.push(tag, nil, nil, nil, content)
         }
     
     @MainActor public func push<Destination: View, Tag: Hashable>(
-        tag: Tag? = Optional<Int>.none,
+        tag: Tag,
+        @ViewBuilder _ content: @escaping () -> Destination) throws {
+            if let _ = self.storage[tag.hashValue]?.value {
+                throw RouterError.alreadyExistsTag(tag: tag)
+            }
+            self.push(tag, nil, nil, nil, content)
+        }
+    
+    @MainActor public func push<Destination: View, Tag: Hashable>(
+        replacingTag tag: Tag? = Optional<Int>.none,
         transition subType: CATransitionSubtype,
         type: CATransitionType = .push,
         duration: CGFloat = 0.3,
         @ViewBuilder _ content: @escaping () -> Destination){
+            self.push(tag, subType, type, duration, content)
+        }
+    
+    @MainActor public func push<Destination: View, Tag: Hashable>(
+        tag: Tag,
+        transition subType: CATransitionSubtype,
+        type: CATransitionType = .push,
+        duration: CGFloat = 0.3,
+        @ViewBuilder _ content: @escaping () -> Destination) throws {
+            if let _ = self.storage[tag.hashValue]?.value {
+                throw RouterError.alreadyExistsTag(tag: tag)
+            }
             self.push(tag, subType, type, duration, content)
         }
     
