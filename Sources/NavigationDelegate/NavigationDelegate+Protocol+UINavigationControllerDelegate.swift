@@ -26,5 +26,6 @@ extension NavigationDelegate: UINavigationControllerDelegate {
         animated: Bool
     ){
         navigationController.setNavigationBarHidden(true, animated: false)
+        self.routingController?.cleaning()
     }
 }
