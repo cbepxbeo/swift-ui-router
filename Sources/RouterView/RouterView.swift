@@ -1,29 +1,29 @@
 /*
 
 Project: SwiftUIRouter
-File: Router.swift
+File: RouterView.swift
 Created by: Egor Boyko
 Date: 15.01.2022
-Last Fix: 03.06.2023
+Last Fix: 04.06.2023
+Version: 1.0.4
 
-Status: #Complete | #Not decorated
+Status: #Complete | #Does not require decorated
 
 */
 
 import SwiftUI
 import SwiftUtilities
-import SwiftUIExtension
 
-public struct Router<Content: View>: UIViewControllerRepresentable {
-    public init(
+internal struct RouterView<Root: View>: UIViewControllerRepresentable {
+    internal init(
         externalController: ExternalController? = nil,
-        @ViewBuilder rootView: @escaping () -> Content){
-            self.content = .init(rootView)
+        rootView: ReferenceWrapper<(() -> Root)?>){
+            self.content = rootView
             self.externalRoutingController = externalController
             self._routingController = .init(initialValue: { .init() })
     }
     
-    internal var content: ReferenceWrapper<(() -> Content)?>
+    internal var content: ReferenceWrapper<(() -> Root)?>
     internal let externalRoutingController: ExternalController?
     internal let _routingController: StateObject<RoutingController>
     internal var routingController: RoutingController {
