@@ -4,6 +4,8 @@ Project: SwiftUIRouter
 File: RoutingController+Methods+Pop.swift
 Created by: Egor Boyko
 Date: 02.06.2023
+Last Fix: 03.06.2023
+Version: 1.0.2
 
 Status: #Complete | #Not decorated
 
