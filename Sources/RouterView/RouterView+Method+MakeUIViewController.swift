@@ -1,19 +1,20 @@
 /*
 
 Project: SwiftUIRouter
-File: Router+Method+MakeUIViewController.swift
+File: RouterView+Method+MakeUIViewController.swift
 Created by: Egor Boyko
 Date: 15.01.2022
-Last Fix: 02.06.2023
+Last Fix: 04.06.2023
+Version: 1.0.4
 
-Status: #Complete | #Not decorated
+Status: #Complete | #Does not require decorated
 
 */
 
 import SwiftUI
 
-extension Router {
-    public func makeUIViewController(context: Context) -> UINavigationController {
+extension RouterView {
+    internal func makeUIViewController(context: Context) -> UINavigationController {
         UINavigationBar.appearance().tintColor = .clear
         
         guard let root = self.content.value else {
@@ -30,6 +31,7 @@ extension Router {
             rootViewController: hosted
         )
         
+        context.coordinator.navigationDelegate.routingController = context.coordinator
         context.coordinator.navigationController = navigationController
         context.coordinator.recognizerDelegate.setNavigationController(navigationController)
         

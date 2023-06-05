@@ -4,6 +4,8 @@ Project: SwiftUIRouter
 File: RoutingController+Methods+PopToRootView.swift
 Created by: Egor Boyko
 Date: 02.06.2023
+Last Fix: 02.06.2023
+Version: 1.0.2
 
 Status: #Complete | #Not decorated
 
@@ -28,13 +30,14 @@ extension RoutingController {
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?){
-        self.navigationController?.popToRootViewController(
-            animated: self.addTransitionToLayer(
-                subType,
-                type,
-                duration)
-        )
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+            self.navigationController?.popToRootViewController(
+                animated: self.addTransitionToLayer(
+                    subType,
+                    type,
+                    duration)
+            )
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+            self.storage = [:]
     }
     
 }
