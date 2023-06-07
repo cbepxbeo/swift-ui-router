@@ -4,7 +4,7 @@ Project: SwiftUIRouter
 File: RoutingController+Methods+Push.swift
 Created by: Egor Boyko
 Date: 02.06.2023
-Last Fix: 03.06.2023
+Last Fix: 07.06.2023
 Version: 1.0.3
 
 Status: #Complete | #Not decorated
@@ -57,14 +57,17 @@ extension RoutingController {
         _ type: CATransitionType?,
         _ duration: CGFloat?,
         @ViewBuilder _ content: @escaping () -> Destination){
-            
+
+            let destination = content()
             let hosting = UIHostingController(
-                rootView: content()
+                rootView: destination
                     .environmentObject(self)
                     .ignoresSafeArea()
             )
-            
-            if let tag {
+        
+            if let wrappedView = destination as? (any RouterViewWrapper) {
+                self.storage[wrappedView.hashValue] = .init(value: hosting)
+            } else if let tag {
                 self.storage[tag.hashValue] = .init(value: hosting)
             }
             
