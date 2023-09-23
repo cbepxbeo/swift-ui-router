@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RouterLink.swift
-Created by: Egor Boyko
-Date: 15.01.2022
-Last Fix: 04.06.2023
-Version: 1.0.4
-
-Status: #Complete | #Decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RouterLink.swift
+ Created by: Egor Boyko
+ Date: 15.01.2022
+ Last Fix: 04.06.2023
+ Version: 1.0.4
+ 
+ Status: #Complete | #Decorated
+ 
+ */
 
 import SwiftUI
 import SwiftUtilities
@@ -135,9 +135,9 @@ import SwiftUtilities
 ///- Warning: Use as a child element of the Router. The degree of nesting does not matter, the very fact of the presence of the Router as a parent is important.
 public struct RouterLink<Destination: View, Label: View, Tag: Hashable>: View {
     
-    @EnvironmentObject internal var routingController: RoutingController
+    @EnvironmentObject var routingController: RoutingController
     
-    internal init(
+    init(
         tag: Tag?,
         label: @escaping () -> Label,
         option: RouterLinkOption?,
@@ -149,13 +149,13 @@ public struct RouterLink<Destination: View, Label: View, Tag: Hashable>: View {
             self.option = option
             self.moveToTagHandler = moveToTagHandler?.value
             self.transition = nil
-    }
-
-    internal let tag: Tag?
-    internal let label: () -> Label
-    internal let destination: (() -> Destination)?
-    internal let option: RouterLinkOption?
-    internal let moveToTagHandler: ((RoutingController, Error?) -> ())?
-    internal var transition: (option: CATransitionSubtype, type: CATransitionType, duration: CGFloat)?
+        }
+    
+    let tag: Tag?
+    let label: () -> Label
+    let destination: (() -> Destination)?
+    let option: RouterLinkOption?
+    let moveToTagHandler: ((RoutingController, Error?) -> ())?
+    var transition: (option: CATransitionSubtype, type: CATransitionType, duration: CGFloat)?
 }
 

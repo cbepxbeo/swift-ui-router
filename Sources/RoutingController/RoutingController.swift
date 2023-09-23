@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RoutingController.swift
-Created by: Egor Boyko
-Date: 15.01.2022
-Last Fix: 03.06.2023
-Version: 1.0.3
-
-Status: #Complete | #Not decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RoutingController.swift
+ Created by: Egor Boyko
+ Date: 15.01.2022
+ Last Fix: 03.06.2023
+ Version: 1.0.3
+ 
+ Status: #Complete | #Not decorated
+ 
+ */
 
 import SwiftUI
 
@@ -22,8 +22,8 @@ public final class RoutingController: NSObject, ObservableObject {
         super.init()
     }
     
-    internal var storage: [Int: RouterWeakStorage<UIViewController>]
-    internal var navigationController: UINavigationController?
-    internal let navigationDelegate: NavigationDelegate
-    internal let recognizerDelegate: RecognizerDelegate
+    var storage: [Int: RouterWeakStorage<UIViewController>]
+    var navigationController: UINavigationController?
+    let navigationDelegate: NavigationDelegate
+    let recognizerDelegate: RecognizerDelegate
 }

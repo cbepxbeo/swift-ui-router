@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RouterLink+Init+DestinationNever.swift
-Created by: Egor Boyko
-Date: 04.06.2023
-Last Fix: 04.06.2023
-Version: 1.0.4
  
-Status: #Complete | #Decorated
-
-*/
+ Project: SwiftUIRouter
+ File: RouterLink+Init+DestinationNever.swift
+ Created by: Egor Boyko
+ Date: 04.06.2023
+ Last Fix: 04.06.2023
+ Version: 1.0.4
+ 
+ Status: #Complete | #Decorated
+ 
+ */
 
 import SwiftUI
 
@@ -37,12 +37,12 @@ extension RouterLink where Destination == Never {
         to: Tag,
         @ViewBuilder label: @escaping () -> Label,
         handler: @escaping (_ routingController: RoutingController, _ error: Error?) -> ()){
-        self.init(
-            tag: to,
-            label: label,
-            option: nil,
-            moveToTagHandler: .init(handler),
-            destination: nil
-        )
-    }
+            self.init(
+                tag: to,
+                label: label,
+                option: nil,
+                moveToTagHandler: .init(handler),
+                destination: nil
+            )
+        }
 }

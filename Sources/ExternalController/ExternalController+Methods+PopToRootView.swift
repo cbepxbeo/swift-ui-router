@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: ExternalController+Methods+PopToRootView.swift
-Created by: Egor Boyko
-Date: 03.06.2023
-Last Fix: 03.06.2023
-Version: 1.0.3
  
-Status: #Complete | #Not decorated
-
-*/
+ Project: SwiftUIRouter
+ File: ExternalController+Methods+PopToRootView.swift
+ Created by: Egor Boyko
+ Date: 03.06.2023
+ Last Fix: 03.06.2023
+ Version: 1.0.3
+ 
+ Status: #Complete | #Not decorated
+ 
+ */
 
 import UIKit
 

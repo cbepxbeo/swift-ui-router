@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RouterLink+Init+TagInt.swift
-Created by: Egor Boyko
-Date: 15.01.2022
-Last Fix: 04.06.2023
-Version: 1.0.4
-
-Status: #Complete | #Decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RouterLink+Init+TagInt.swift
+ Created by: Egor Boyko
+ Date: 15.01.2022
+ Last Fix: 04.06.2023
+ Version: 1.0.4
+ 
+ Status: #Complete | #Decorated
+ 
+ */
 
 import SwiftUI
 
@@ -37,5 +37,5 @@ extension RouterLink where Tag == Int {
                 option: nil,
                 destination: .init(destination)
             )
-    }
+        }
 }

@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RoutingController+Methods+PopToTag.swift
-Created by: Egor Boyko
-Date: 03.06.2023
-Last Fix: 03.06.2023
-Version: 1.0.3
-
-Status: #Complete | #Not decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RoutingController+Methods+PopToTag.swift
+ Created by: Egor Boyko
+ Date: 03.06.2023
+ Last Fix: 03.06.2023
+ Version: 1.0.3
+ 
+ Status: #Complete | #Not decorated
+ 
+ */
 
 import UIKit
 
@@ -27,7 +27,7 @@ extension RoutingController {
         try self.popToTag(tag, nil, nil, nil)
     }
     
-    @MainActor internal func popToTag<Tag: Hashable>(
+    @MainActor func popToTag<Tag: Hashable>(
         _ tag: Tag,
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
