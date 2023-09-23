@@ -11,8 +11,8 @@ let package = Package(
             targets: ["SwiftUIRouter"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/cbepxbeo/swift-utilities.git", exact: "0.0.4"),
-        .package(url: "https://github.com/cbepxbeo/swift-ui-extensions.git", exact: "0.0.1")
+        .package(url: "https://github.com/cbepxbeo/swift-utilities.git", from: "0.0.4"),
+        .package(url: "https://github.com/cbepxbeo/swift-ui-extensions.git", from: "0.0.1")
     ],
     targets: [
         .target(
