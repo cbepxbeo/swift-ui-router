@@ -4,7 +4,7 @@
  File: RoutingController+Methods+Pop.swift
  Created by: Egor Boyko
  Date: 02.06.2023
- Last Fix: 03.06.2023
+ Last Fix: 24.09.2023
  Version: 1.0.2
  
  Status: #Complete | #Not decorated
@@ -12,21 +12,25 @@
  */
 
 import UIKit
+import SwiftUtilities
 
 extension RoutingController {
-    
-    @MainActor public func pop(
+    public func pop(
         transition subType: CATransitionSubtype,
         type: CATransitionType = .push,
         duration: CGFloat = 0.3){
-            self.pop(subType, type, duration)
+            toMainThread {
+                self.pop(subType, type, duration)
+            }
         }
     
-    @MainActor public func pop(){
-        self.pop(nil, nil, nil)
+    public func pop(){
+        toMainThread {
+            self.pop(nil, nil, nil)
+        }
     }
     
-    @MainActor func pop(
+    func pop(
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?){

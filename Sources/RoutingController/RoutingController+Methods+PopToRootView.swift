@@ -4,7 +4,7 @@
  File: RoutingController+Methods+PopToRootView.swift
  Created by: Egor Boyko
  Date: 02.06.2023
- Last Fix: 02.06.2023
+ Last Fix: 24.09.2023
  Version: 1.0.2
  
  Status: #Complete | #Not decorated
@@ -12,21 +12,26 @@
  */
 
 import UIKit
+import SwiftUtilities
 
 extension RoutingController {
     
-    @MainActor public func popToRootView(
+    public func popToRootView(
         transition subType: CATransitionSubtype,
         type: CATransitionType = .push,
         duration: CGFloat = 0.3){
-            self.popToRootView(subType, type, duration)
+            toMainThread {
+                self.popToRootView(subType, type, duration)
+            }
         }
     
-    @MainActor public func popToRootView(){
-        self.popToRootView(nil, nil, nil)
+    public func popToRootView(){
+        toMainThread {
+            self.popToRootView(nil, nil, nil)
+        }
     }
     
-    @MainActor func popToRootView(
+    func popToRootView(
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?){

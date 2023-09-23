@@ -14,7 +14,6 @@
 import UIKit
 
 extension RoutingController {
-    
     func cleaning(){
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let routingController = self else {
@@ -31,5 +30,4 @@ extension RoutingController {
             }
         }
     }
-    
 }

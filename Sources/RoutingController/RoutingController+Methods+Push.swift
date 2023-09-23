@@ -4,7 +4,7 @@
  File: RoutingController+Methods+Push.swift
  Created by: Egor Boyko
  Date: 02.06.2023
- Last Fix: 07.06.2023
+ Last Fix: 24.09.2023
  Version: 1.0.3
  
  Status: #Complete | #Not decorated
@@ -12,13 +12,16 @@
  */
 
 import SwiftUI
+import SwiftUtilities
 
 extension RoutingController {
     
-    @MainActor public func push<Destination: View, Tag: Hashable>(
+    public func push<Destination: View, Tag: Hashable>(
         replacingTag tag: Tag? = Optional<Int>.none,
         @ViewBuilder _ content: @escaping () -> Destination){
-            self.push(tag, nil, nil, nil, content)
+            toMainThread {
+                self.push(tag, nil, nil, nil, content)
+            }
         }
     
     @MainActor public func push<Destination: View, Tag: Hashable>(
@@ -30,13 +33,15 @@ extension RoutingController {
             self.push(tag, nil, nil, nil, content)
         }
     
-    @MainActor public func push<Destination: View, Tag: Hashable>(
+    public func push<Destination: View, Tag: Hashable>(
         replacingTag tag: Tag? = Optional<Int>.none,
         transition subType: CATransitionSubtype,
         type: CATransitionType = .push,
         duration: CGFloat = 0.3,
         @ViewBuilder _ content: @escaping () -> Destination){
-            self.push(tag, subType, type, duration, content)
+            toMainThread {
+                self.push(tag, subType, type, duration, content)
+            }
         }
     
     @MainActor public func push<Destination: View, Tag: Hashable>(
@@ -51,7 +56,7 @@ extension RoutingController {
             self.push(tag, subType, type, duration, content)
         }
     
-    @MainActor func push<Destination: View, Tag: Hashable>(
+    func push<Destination: View, Tag: Hashable>(
         _ tag: Tag?,
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
