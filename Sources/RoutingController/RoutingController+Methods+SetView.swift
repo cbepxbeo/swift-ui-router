@@ -43,7 +43,6 @@ extension RoutingController {
             let hosting = UIHostingController(
                 rootView: destination
                     .environmentObject(self)
-                    .ignoresSafeArea()
             )
             
             self.storage = [:]

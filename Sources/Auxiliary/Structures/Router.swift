@@ -4,7 +4,7 @@
  File: Router.swift
  Created by: Egor Boyko
  Date: 04.06.2023
- Last Fix: 04.06.2023
+ Last Fix: 24.09.2023
  Version: 1.0.4
  
  Status: #Complete | #Not decorated
@@ -30,6 +30,5 @@ public struct Router<Root: View>: View {
             externalController: self.externalController,
             rootView: content
         )
-        .ignoresSafeArea()
     }
 }

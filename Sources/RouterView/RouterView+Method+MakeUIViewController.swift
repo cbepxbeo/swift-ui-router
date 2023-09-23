@@ -4,7 +4,7 @@
  File: RouterView+Method+MakeUIViewController.swift
  Created by: Egor Boyko
  Date: 15.01.2022
- Last Fix: 04.06.2023
+ Last Fix: 24.09.2023
  Version: 1.0.4
  
  Status: #Complete | #Does not require decorated
@@ -24,7 +24,6 @@ extension RouterView {
         let hosted = UIHostingController(
             rootView: root()
                 .environmentObject(context.coordinator)
-                .ignoresSafeArea()
         )
         self.content.value = nil
         let navigationController = UINavigationController(

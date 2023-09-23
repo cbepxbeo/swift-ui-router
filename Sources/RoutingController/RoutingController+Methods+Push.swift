@@ -67,7 +67,6 @@ extension RoutingController {
             let hosting = UIHostingController(
                 rootView: destination
                     .environmentObject(self)
-                    .ignoresSafeArea()
             )
             
             if let wrappedView = destination as? (any RouterViewWrapper) {
