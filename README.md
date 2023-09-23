@@ -272,7 +272,6 @@ struct RootView: View {
                 ExampleView()
             }
         }
-        .ignoresSafeArea()
     }
 }
 
