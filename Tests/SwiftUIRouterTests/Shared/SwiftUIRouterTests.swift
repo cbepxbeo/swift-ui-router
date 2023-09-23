@@ -5,7 +5,7 @@
  Created by: Egor Boyko
  Date: 15.01.2022
  
-*/
+ */
 
 import XCTest
 @testable import SwiftUIRouter

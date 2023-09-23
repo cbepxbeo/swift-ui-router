@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RoutingController.swift
-Created by: Egor Boyko
-Date: 15.01.2022
-Last Fix: 03.06.2023
-Version: 1.0.3
-
-Status: #Complete | #Not decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RoutingController.swift
+ Created by: Egor Boyko
+ Date: 15.01.2022
+ Last Fix: 03.06.2023
+ Version: 1.0.3
+ 
+ Status: #Complete | #Not decorated
+ 
+ */
 
 import SwiftUI
 

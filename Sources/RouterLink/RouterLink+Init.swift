@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RouterLink+Init.swift
-Created by: Egor Boyko
-Date: 07.06.2023
-Last Fix: 07.06.2023
-Version: 1.0.5
-
-Status: #Complete | #Decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RouterLink+Init.swift
+ Created by: Egor Boyko
+ Date: 07.06.2023
+ Last Fix: 07.06.2023
+ Version: 1.0.5
+ 
+ Status: #Complete | #Decorated
+ 
+ */
 
 import SwiftUI
 
@@ -39,5 +39,5 @@ extension RouterLink{
                 option: nil,
                 destination: .init(destination)
             )
-    }
+        }
 }

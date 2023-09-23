@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RoutingController+Methods+Push.swift
-Created by: Egor Boyko
-Date: 02.06.2023
-Last Fix: 07.06.2023
-Version: 1.0.3
-
-Status: #Complete | #Not decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RoutingController+Methods+Push.swift
+ Created by: Egor Boyko
+ Date: 02.06.2023
+ Last Fix: 07.06.2023
+ Version: 1.0.3
+ 
+ Status: #Complete | #Not decorated
+ 
+ */
 
 import SwiftUI
 
@@ -57,14 +57,14 @@ extension RoutingController {
         _ type: CATransitionType?,
         _ duration: CGFloat?,
         @ViewBuilder _ content: @escaping () -> Destination){
-
+            
             let destination = content()
             let hosting = UIHostingController(
                 rootView: destination
                     .environmentObject(self)
                     .ignoresSafeArea()
             )
-        
+            
             if let wrappedView = destination as? (any RouterViewWrapper) {
                 self.storage[wrappedView.hashValue] = .init(value: hosting)
             } else if let tag {

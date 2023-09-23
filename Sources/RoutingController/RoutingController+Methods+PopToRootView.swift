@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RoutingController+Methods+PopToRootView.swift
-Created by: Egor Boyko
-Date: 02.06.2023
-Last Fix: 02.06.2023
-Version: 1.0.2
-
-Status: #Complete | #Not decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RoutingController+Methods+PopToRootView.swift
+ Created by: Egor Boyko
+ Date: 02.06.2023
+ Last Fix: 02.06.2023
+ Version: 1.0.2
+ 
+ Status: #Complete | #Not decorated
+ 
+ */
 
 import UIKit
 
@@ -38,6 +38,6 @@ extension RoutingController {
             )
             self.navigationController?.setNavigationBarHidden(true, animated: false)
             self.storage = [:]
-    }
+        }
     
 }

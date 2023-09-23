@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RouterLink+Init+LabelText.swift
-Created by: Egor Boyko
-Date: 04.06.2023
-Last Fix: 04.06.2023
-Version: 1.0.4
-
-Status: #Complete | #Decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RouterLink+Init+LabelText.swift
+ Created by: Egor Boyko
+ Date: 04.06.2023
+ Last Fix: 04.06.2023
+ Version: 1.0.4
+ 
+ Status: #Complete | #Decorated
+ 
+ */
 
 import SwiftUI
 
@@ -57,7 +57,7 @@ extension RouterLink where Label == Text{
                 moveToTagHandler: .init(handler),
                 destination: .init(destination)
             )
-    }
+        }
     
     ///Creating a router link to go to view that can be tagged. With text label.
     ///
@@ -80,5 +80,5 @@ extension RouterLink where Label == Text{
                 moveToTagHandler: nil,
                 destination: .init(destination)
             )
-    }
+        }
 }

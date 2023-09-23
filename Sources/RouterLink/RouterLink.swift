@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RouterLink.swift
-Created by: Egor Boyko
-Date: 15.01.2022
-Last Fix: 04.06.2023
-Version: 1.0.4
-
-Status: #Complete | #Decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RouterLink.swift
+ Created by: Egor Boyko
+ Date: 15.01.2022
+ Last Fix: 04.06.2023
+ Version: 1.0.4
+ 
+ Status: #Complete | #Decorated
+ 
+ */
 
 import SwiftUI
 import SwiftUtilities
@@ -149,8 +149,8 @@ public struct RouterLink<Destination: View, Label: View, Tag: Hashable>: View {
             self.option = option
             self.moveToTagHandler = moveToTagHandler?.value
             self.transition = nil
-    }
-
+        }
+    
     internal let tag: Tag?
     internal let label: () -> Label
     internal let destination: (() -> Destination)?

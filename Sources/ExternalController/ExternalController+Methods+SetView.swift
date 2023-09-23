@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: ExternalController+Methods+SetView.swift
-Created by: Egor Boyko
-Date: 21.07.2023
-Last Fix: 21.07.2023
-Version: 1.0.6
  
-Status: #Complete | #Not decorated
-
-*/
+ Project: SwiftUIRouter
+ File: ExternalController+Methods+SetView.swift
+ Created by: Egor Boyko
+ Date: 21.07.2023
+ Last Fix: 21.07.2023
+ Version: 1.0.6
+ 
+ Status: #Complete | #Not decorated
+ 
+ */
 
 import SwiftUI
 

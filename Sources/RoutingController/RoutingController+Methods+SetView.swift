@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RoutingController+Methods+SetView.swift
-Created by: Egor Boyko
-Date: 21.07.2023
-Last Fix: 21.07.2023
-Version: 1.0.6
  
-Status: #Complete | #Not decorated
-
-*/
+ Project: SwiftUIRouter
+ File: RoutingController+Methods+SetView.swift
+ Created by: Egor Boyko
+ Date: 21.07.2023
+ Last Fix: 21.07.2023
+ Version: 1.0.6
+ 
+ Status: #Complete | #Not decorated
+ 
+ */
 
 import SwiftUI
 
@@ -36,7 +36,7 @@ extension RoutingController {
         _ type: CATransitionType?,
         _ duration: CGFloat?,
         @ViewBuilder _ content: @escaping () -> Destination){
-
+            
             let destination = content()
             let hosting = UIHostingController(
                 rootView: destination

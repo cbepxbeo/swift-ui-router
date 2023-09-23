@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RouterView.swift
-Created by: Egor Boyko
-Date: 15.01.2022
-Last Fix: 04.06.2023
-Version: 1.0.4
-
-Status: #Complete | #Does not require decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RouterView.swift
+ Created by: Egor Boyko
+ Date: 15.01.2022
+ Last Fix: 04.06.2023
+ Version: 1.0.4
+ 
+ Status: #Complete | #Does not require decorated
+ 
+ */
 
 import SwiftUI
 import SwiftUtilities
@@ -22,7 +22,7 @@ internal struct RouterView<Root: View>: UIViewControllerRepresentable {
             self.content = rootView
             self.externalRoutingController = externalController
             self._routingController = .init(initialValue: { .init() })
-    }
+        }
     
     internal var content: ReferenceWrapper<(() -> Root)?>
     internal let externalRoutingController: ExternalController?

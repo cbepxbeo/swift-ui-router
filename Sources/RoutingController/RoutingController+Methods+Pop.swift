@@ -1,15 +1,15 @@
 /*
-
-Project: SwiftUIRouter
-File: RoutingController+Methods+Pop.swift
-Created by: Egor Boyko
-Date: 02.06.2023
-Last Fix: 03.06.2023
-Version: 1.0.2
-
-Status: #Complete | #Not decorated
-
-*/
+ 
+ Project: SwiftUIRouter
+ File: RoutingController+Methods+Pop.swift
+ Created by: Egor Boyko
+ Date: 02.06.2023
+ Last Fix: 03.06.2023
+ Version: 1.0.2
+ 
+ Status: #Complete | #Not decorated
+ 
+ */
 
 import UIKit
 
@@ -30,7 +30,7 @@ extension RoutingController {
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?){
-
+            
             self.navigationController?.popViewController(
                 animated: self.addTransitionToLayer(
                     subType,
