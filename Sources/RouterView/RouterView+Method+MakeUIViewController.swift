@@ -15,8 +15,6 @@ import SwiftUI
 
 extension RouterView {
     func makeUIViewController(context: Context) -> UINavigationController {
-        UINavigationBar.appearance().tintColor = .clear
-        
         guard let root = self.content.value else {
             fatalError("Can't use routing without root view")
         }
@@ -37,6 +35,7 @@ extension RouterView {
         navigationController.delegate = context.coordinator.navigationDelegate
         navigationController.interactivePopGestureRecognizer?.delegate = context.coordinator.recognizerDelegate
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.tintColor = .clear
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true
         

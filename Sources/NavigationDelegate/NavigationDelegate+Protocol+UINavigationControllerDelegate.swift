@@ -19,7 +19,9 @@ extension NavigationDelegate: UINavigationControllerDelegate {
         willShow viewController: UIViewController,
         animated: Bool
     ){
-        navigationController.setNavigationBarHidden(true, animated: false)
+        DispatchQueue.main.async {
+            navigationController.setNavigationBarHidden(true, animated: false)
+        }
     }
     
     @MainActor func navigationController(

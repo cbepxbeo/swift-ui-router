@@ -30,5 +30,6 @@ public struct Router<Root: View>: View {
             externalController: self.externalController,
             rootView: content
         )
+        .ignoresSafeArea()
     }
 }
