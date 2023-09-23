@@ -14,7 +14,7 @@
 import SwiftUI
 
 extension RouterLink {
-    internal func action(){
+    func action(){
         switch self.option{
         case .back:
             self.routingController.pop()

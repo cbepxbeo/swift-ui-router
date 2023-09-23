@@ -14,12 +14,12 @@
 import UIKit
 
 extension RecognizerDelegate: UIGestureRecognizerDelegate {
-    internal func gestureRecognizerShouldBegin(
+    func gestureRecognizerShouldBegin(
         _ gestureRecognizer: UIGestureRecognizer) -> Bool {
             self.navigationController?.viewControllers.count ?? 0 > 1
         }
     
-    internal func gestureRecognizer(
+    func gestureRecognizer(
         _ gestureRecognizer: UIGestureRecognizer,
         shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
             true

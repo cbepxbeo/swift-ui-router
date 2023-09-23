@@ -26,7 +26,7 @@ extension RoutingController {
         self.popToRootView(nil, nil, nil)
     }
     
-    @MainActor internal func popToRootView(
+    @MainActor func popToRootView(
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?){

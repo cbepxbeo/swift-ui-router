@@ -13,7 +13,7 @@
 
 import SwiftUI
 
-internal protocol RouterViewWrapper: View {
+protocol RouterViewWrapper: View {
     var hashValue: Int { get }
 }
 

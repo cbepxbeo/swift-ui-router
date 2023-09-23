@@ -14,7 +14,7 @@
 import UIKit
 
 extension RecognizerDelegate {
-    internal func setNavigationController(
+    func setNavigationController(
         _ controller: UINavigationController){
             self.navigationController = controller
         }

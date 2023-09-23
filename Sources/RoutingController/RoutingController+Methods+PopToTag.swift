@@ -27,7 +27,7 @@ extension RoutingController {
         try self.popToTag(tag, nil, nil, nil)
     }
     
-    @MainActor internal func popToTag<Tag: Hashable>(
+    @MainActor func popToTag<Tag: Hashable>(
         _ tag: Tag,
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,

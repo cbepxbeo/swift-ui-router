@@ -14,7 +14,7 @@
 import UIKit
 
 extension RoutingController {
-    @MainActor internal func addTransitionToLayer(
+    @MainActor func addTransitionToLayer(
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?) -> Bool {

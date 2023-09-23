@@ -14,7 +14,7 @@
 import SwiftUI
 
 extension RouterLink {
-    internal func makeButton() -> Button<Label> {
+    func makeButton() -> Button<Label> {
         Button(
             action: self.action,
             label: self.label

@@ -13,7 +13,7 @@
 
 import SwiftUI
 
-internal struct ViewWrapper<Content: View, Tag: Hashable>: RouterViewWrapper  {
+struct ViewWrapper<Content: View, Tag: Hashable>: RouterViewWrapper  {
     init(tag: Tag, @ViewBuilder content: @escaping () -> Content) {
         self.tag = tag
         self.content = content
@@ -22,11 +22,11 @@ internal struct ViewWrapper<Content: View, Tag: Hashable>: RouterViewWrapper  {
     private var content: () -> Content
     private var tag: Tag
     
-    internal var hashValue: Int {
+    var hashValue: Int {
         self.tag.hashValue
     }
     
-    internal var body: some View {
+    var body: some View {
         self.content()
     }
 }

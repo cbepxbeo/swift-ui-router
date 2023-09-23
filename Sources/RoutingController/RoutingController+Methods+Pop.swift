@@ -26,7 +26,7 @@ extension RoutingController {
         self.pop(nil, nil, nil)
     }
     
-    @MainActor internal func pop(
+    @MainActor func pop(
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,
         _ duration: CGFloat?){

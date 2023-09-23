@@ -14,7 +14,7 @@
 import UIKit
 
 extension RouterView {
-    internal func updateUIViewController(
+    func updateUIViewController(
         _ pageViewController: UINavigationController,
         context: Context) {}
 }

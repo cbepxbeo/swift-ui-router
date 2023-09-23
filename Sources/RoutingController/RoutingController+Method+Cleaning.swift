@@ -15,7 +15,7 @@ import UIKit
 
 extension RoutingController {
     
-    internal func cleaning(){
+    func cleaning(){
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let routingController = self else {
                 return

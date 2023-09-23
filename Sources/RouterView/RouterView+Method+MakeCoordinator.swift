@@ -12,7 +12,7 @@
  */
 
 extension RouterView {
-    internal func makeCoordinator() -> RoutingController {
+    func makeCoordinator() -> RoutingController {
         self.externalRoutingController?.routingController = self.routingController
         return self.routingController
     }

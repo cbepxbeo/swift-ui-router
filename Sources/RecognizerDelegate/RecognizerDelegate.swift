@@ -13,6 +13,6 @@
 
 import UIKit
 
-internal final class RecognizerDelegate: NSObject {
-    internal weak var navigationController: UINavigationController?
+final class RecognizerDelegate: NSObject {
+    weak var navigationController: UINavigationController?
 }

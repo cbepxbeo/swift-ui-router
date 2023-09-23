@@ -14,7 +14,7 @@
 import SwiftUI
 
 extension RouterView {
-    internal func makeUIViewController(context: Context) -> UINavigationController {
+    func makeUIViewController(context: Context) -> UINavigationController {
         UINavigationBar.appearance().tintColor = .clear
         
         guard let root = self.content.value else {

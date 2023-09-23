@@ -51,7 +51,7 @@ extension RoutingController {
             self.push(tag, subType, type, duration, content)
         }
     
-    @MainActor internal func push<Destination: View, Tag: Hashable>(
+    @MainActor func push<Destination: View, Tag: Hashable>(
         _ tag: Tag?,
         _ subType: CATransitionSubtype?,
         _ type: CATransitionType?,

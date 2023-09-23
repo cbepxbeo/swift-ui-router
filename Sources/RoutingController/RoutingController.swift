@@ -22,8 +22,8 @@ public final class RoutingController: NSObject, ObservableObject {
         super.init()
     }
     
-    internal var storage: [Int: RouterWeakStorage<UIViewController>]
-    internal var navigationController: UINavigationController?
-    internal let navigationDelegate: NavigationDelegate
-    internal let recognizerDelegate: RecognizerDelegate
+    var storage: [Int: RouterWeakStorage<UIViewController>]
+    var navigationController: UINavigationController?
+    let navigationDelegate: NavigationDelegate
+    let recognizerDelegate: RecognizerDelegate
 }

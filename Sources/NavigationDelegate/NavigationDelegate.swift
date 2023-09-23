@@ -13,6 +13,6 @@
 
 import ObjectiveC
 
-internal final class NavigationDelegate: NSObject {
-    internal weak var routingController: RoutingController?
+final class NavigationDelegate: NSObject {
+    weak var routingController: RoutingController?
 }

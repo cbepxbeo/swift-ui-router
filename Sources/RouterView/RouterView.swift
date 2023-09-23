@@ -15,8 +15,8 @@ import SwiftUI
 import SwiftUtilities
 import SwiftUIExtension
 
-internal struct RouterView<Root: View>: UIViewControllerRepresentable {
-    internal init(
+struct RouterView<Root: View>: UIViewControllerRepresentable {
+    init(
         externalController: ExternalController? = nil,
         rootView: ReferenceWrapper<(() -> Root)?>){
             self.content = rootView
@@ -24,10 +24,10 @@ internal struct RouterView<Root: View>: UIViewControllerRepresentable {
             self._routingController = .init(initialValue: { .init() })
         }
     
-    internal var content: ReferenceWrapper<(() -> Root)?>
-    internal let externalRoutingController: ExternalController?
-    internal let _routingController: StateObject<RoutingController>
-    internal var routingController: RoutingController {
+    var content: ReferenceWrapper<(() -> Root)?>
+    let externalRoutingController: ExternalController?
+    let _routingController: StateObject<RoutingController>
+    var routingController: RoutingController {
         self._routingController.wrappedValue
     }
 }

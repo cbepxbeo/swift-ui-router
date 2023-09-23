@@ -11,9 +11,9 @@
  
  */
 
-internal struct RouterWeakStorage<T: AnyObject> {
-    internal weak var value: T?
-    internal init(value: T) {
+struct RouterWeakStorage<T: AnyObject> {
+    weak var value: T?
+    init(value: T) {
         self.value = value
     }
 }
